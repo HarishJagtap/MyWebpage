@@ -1,3 +1,6 @@
+## Intro
+This is a Django project that lets you create Custom webpage and add subpages, posts to it without ever getting into html/css.
+
 ## Setup Python Virtual Environment
 `python -m virtualenv . -p python3`<br>
 `start Scripts\activate`<br>
