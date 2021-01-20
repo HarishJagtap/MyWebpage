@@ -1,0 +1,17 @@
+<div class="item mb-4 card" style="overflow: hidden;">
+    <div class="media">
+        <div class="media-body card-body">
+
+            {% if title != '' %}
+            <h3 class="title mb-1">{{title}}</h3>
+            {% endif %}
+
+            {% if date != '' %}
+            <div class="meta"> <span class="date">{{date}}</span> </div>
+            {% endif %}
+
+            <div class="intro pt-2">{{body}}</div>
+
+        </div>
+    </div>
+</div>
