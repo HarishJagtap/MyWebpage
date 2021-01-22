@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields import IntegerField
 
 
 class Resume(models.Model):
@@ -21,8 +22,15 @@ class Item(models.Model):
         super().save(*args, **kwargs)
 
 
+class PriorityTag(models.Model):
+    name = models.TextField(blank=False, max_length=20, primary_key=True)
+    value = models.PositiveIntegerField(blank=False, default=1)
+
+
 class Post(models.Model):
     posttype = models.ForeignKey(Item, on_delete=models.CASCADE, blank=False)
+    priority = models.ForeignKey(
+        PriorityTag, on_delete=models.CASCADE, blank=False)
     title = models.TextField(blank=True, max_length=100)
     date = models.DateField(blank=True, null=True)
     body = models.TextField(blank=True)

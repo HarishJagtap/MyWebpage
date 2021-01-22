@@ -66,7 +66,7 @@ def render_body(url):
 
     postlist = mark_safe('')
 
-    for post in Post.objects.all():
+    for post in Post.objects.order_by('priority__value').all():
         if (post.posttype.url == url):
 
             date_string = post.date
