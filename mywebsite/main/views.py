@@ -52,7 +52,7 @@ def render_header():
 
     itemlist = mark_safe('')
 
-    for item in Item.objects.all():
+    for item in Item.objects.order_by('priority__value').all():
         itemlist += render_to_string('html/item.html', {
             'title': item.title,
             'url': item.url,
